@@ -1,0 +1,7 @@
+version=2.1.0
+src=src/test/haxe
+bin=build
+report=build/report
+hxml=test.hxml
+classPaths=src/main/haxe
+resources=src/test/resources
