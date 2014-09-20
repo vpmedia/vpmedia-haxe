@@ -32,10 +32,11 @@ git:
     depth: 1
 
 language: objective-c
+#language: java
 
-#os:
-#   - osx
-#   - linux
+os:
+   - osx
+   - linux
 
 install:
     - ./.travis-install.sh

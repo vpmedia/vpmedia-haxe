@@ -20,11 +20,12 @@ else
 	sudo add-apt-repository ppa:eyecreate/haxe -y
 	sudo apt-get update -y
 	sudo apt-get install haxe -y
-	mkdir -p ~/.haxe/lib
-	mkdir -p bin
-	echo ~/.haxe/lib | haxelib setup
-	haxelib install munit || true
-	haxelib install lime || true
-	haxelib install box2d || true
-	haxelib install nape || true
 fi
+
+mkdir -p ~/.haxe/lib
+mkdir -p bin
+echo ~/.haxe/lib | haxelib setup
+haxelib install munit || true
+haxelib install lime || true
+haxelib install box2d || true
+haxelib install nape || true
