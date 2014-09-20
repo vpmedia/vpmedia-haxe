@@ -1,0 +1,42 @@
+////////////////////////////////////////////////////////////////////////////////
+//=BEGIN CLOSED LICENSE
+//
+// Copyright(c) 2012 Andras Csizmadia.
+// http://www.vpmedia.eu
+//
+// For information about the licensing and copyright please 
+// contact Andras Csizmadia at andras@vpmedia.eu.
+//
+//=END CLOSED LICENSE
+////////////////////////////////////////////////////////////////////////////////
+package hu.vpmedia.entity;
+
+import box2D.dynamics.controllers.B2Controller;
+import hu.vpmedia.box2d.Box2DDef;
+
+/**
+ * @author Andras Csizmadia
+ * @version 1.0
+ */
+class Box2DEffectSystem extends BaseEntitySystem {
+    private var _controller:B2Controller;
+// private var _effect:B2Effect;
+
+    public function new(priority:Int, world:BaseEntityWorld) {
+        super(priority, world);
+// _effect=new B2BuoyancyEffect();
+        _controller = new B2Controller(Box2DDef.world, _effect);
+    }
+
+    function onAdded(node:Box2DGravityNode):Void {
+        _controller.addBody(node.physics.getBody());
+    }
+
+    function onRemoved(node:Box2DGravityNode):Void {
+        _controller.removeBody(node.physics.getBody());
+    }
+
+    function onStep(node:Box2DGravityNode, timeDelta:Float):Void {
+        _controller.Step();
+    }
+}
