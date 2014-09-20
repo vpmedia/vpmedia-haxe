@@ -15,8 +15,8 @@ if [[ "$DARWIN" = true ]]; then
 	export FLASHPLAYER_DEBUGGER="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
 	export FLASH_PLAYER_EXE="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
 else
-	"export DISPLAY=:99.0"
-	"sh -e /etc/init.d/xvfb start"
+	export DISPLAY=:99.0
+	sh -e /etc/init.d/xvfb start
 	sudo add-apt-repository ppa:eyecreate/haxe -y
 	sudo apt-get update -y
 	sudo apt-get install haxe -y
