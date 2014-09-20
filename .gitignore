@@ -30,15 +30,7 @@
 
 # Build and Release Folders
 bin/
-bin-debug/
-bin-release/
 build/
-
-# Other files and folders
-.settings/
-.gradle/
-temp/
-publish/
 
 # IntelliJ IDEA
 .idea/
