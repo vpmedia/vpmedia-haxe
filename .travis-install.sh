@@ -14,7 +14,6 @@ if [[ "$DARWIN" = true ]]; then
 	brew cask install flash-player-debugger
 	export FLASHPLAYER_DEBUGGER="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
 	export FLASH_PLAYER_EXE="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
-fi
 else
 	"export DISPLAY=:99.0"
 	"sh -e /etc/init.d/xvfb start"
