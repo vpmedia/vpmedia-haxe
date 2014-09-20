@@ -229,8 +229,8 @@ class BaseComponent extends BaseDisplayObject {
         if (type == null) {
             type = ComponentChange.ALL;
         }
-/* #if debug
-        L.info("invalidate:"+type+"::"+skinClass+", parent:"+_parent);
+        /*#if debug
+        trace("invalidate:"+type+"::"+skinClass+", parent:"+_parent);
         #end*/
         _changedPropertyGroups.set(Std.string(type), type);
         if (drawAfter && !waitFrame) {

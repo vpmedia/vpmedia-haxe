@@ -27,13 +27,14 @@
  */
 package hu.vpmedia.components;
 
+import haxe.ds.ObjectMap;
+
 /**
  * @author Andras Csizmadia
  * @version 1.0
  */
 class BaseStyleSheet {
-// private var model:Map<String, Dynamic>;
-    private var model:Dynamic;
+    private var model:ObjectMap<String, Dynamic>;
 
 //--------------------------------------
 //  Constructor
@@ -45,48 +46,44 @@ class BaseStyleSheet {
     }
 
     public function reset() {
-// model=new Map();
-        model = { };
+        model=new ObjectMap();
     }
 
 //--------------------------------------
 //  Private(protected)
 //--------------------------------------
-/**
+    /**
      * Abstract
      */
 
     function initialize():Void {
-// override with own stylesheets
+        // override with own stylesheets
     }
 
 //--------------------------------------
 //  Public
 //--------------------------------------
-/**
+    /**
      * Gets a stylesheet
      */
 
     public function getStyle(value:String):Dynamic {
-// return model.get(value);
-        return model.value;
+        return model.get(value);
     }
 
-/**
+    /**
      * Sets a stylesheet
      */
 
     public function setStyle(name:String, value:Dynamic):Void {
-//model.set(name,value);
-        model.name = value;
+        model.set(name,value);
     }
 
-/**
+    /**
      * Checks for a stylesheet
      */
 
     public function hasStyle(name:String):Bool {
-// return model.exists(name);
-        return model.name != null;
+        return model.exists(name);
     }
 }
