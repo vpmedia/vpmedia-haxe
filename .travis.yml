@@ -43,6 +43,9 @@ before_install:
     - mkdir -p bin
     - echo ~/.haxe/lib | haxelib setup
     - haxelib install munit || true
+    - haxelib install lime || true
+    - haxelib install box2d || true
+    - haxelib install nape || true
 
 script:
     - haxe build.hxml
