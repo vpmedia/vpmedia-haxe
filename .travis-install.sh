@@ -2,30 +2,30 @@
 set -e
 set -x
 if [[ "$(uname -s)" == 'Darwin' ]]; then
-    DARWIN=true
+	DARWIN=true
 else
-    DARWIN=false
+	DARWIN=false
 fi
 
 if [[ "$DARWIN" = true ]]; then
-    brew update
-    brew install haxe
-    brew install caskroom/cask/brew-cask
-    brew cask install flash-player-debugger
-    export FLASHPLAYER_DEBUGGER="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
-    export FLASH_PLAYER_EXE="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
+	brew update
+	brew install haxe
+	brew install caskroom/cask/brew-cask
+	brew cask install flash-player-debugger
+	export FLASHPLAYER_DEBUGGER="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
+	export FLASH_PLAYER_EXE="$HOME/Applications/Flash Player Debugger.app/Contents/MacOS/Flash Player Debugger"
 fi
 else
-    "export DISPLAY=:99.0"
-    "sh -e /etc/init.d/xvfb start"
-    sudo add-apt-repository ppa:eyecreate/haxe -y
-    sudo apt-get update -y
-    sudo apt-get install haxe -y
-    mkdir -p ~/.haxe/lib
-    mkdir -p bin
-    echo ~/.haxe/lib | haxelib setup
-    haxelib install munit || true
-    haxelib install lime || true
-    haxelib install box2d || true
-    haxelib install nape || true
+	"export DISPLAY=:99.0"
+	"sh -e /etc/init.d/xvfb start"
+	sudo add-apt-repository ppa:eyecreate/haxe -y
+	sudo apt-get update -y
+	sudo apt-get install haxe -y
+	mkdir -p ~/.haxe/lib
+	mkdir -p bin
+	echo ~/.haxe/lib | haxelib setup
+	haxelib install munit || true
+	haxelib install lime || true
+	haxelib install box2d || true
+	haxelib install nape || true
 fi
