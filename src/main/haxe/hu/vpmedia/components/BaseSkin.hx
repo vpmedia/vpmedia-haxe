@@ -27,7 +27,7 @@
  */
 package hu.vpmedia.components;
 
-import xrope.ILayoutGroup;
+//import xrope.ILayoutGroup;
 
 /**
  * @author Andras Csizmadia
@@ -35,7 +35,7 @@ import xrope.ILayoutGroup;
  */
 class BaseSkin {
     public var owner:BaseComponent;
-    public var layout:ILayoutGroup;
+    //public var layout:ILayoutGroup;
     public var componentPartList:Array<BaseComponent>;
 
 //----------------------------------
